@@ -8,28 +8,17 @@
 
 import React, { Component } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
   FlatList,
   Alert,
   TouchableOpacity,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 import Image  from 'react-native-image-progress';
 import ProgressBar from 'react-native-progress';
-// import { StackNavigator } from 'react-navigation'
 
 export default class HelloWorldApp extends Component {
   
@@ -48,7 +37,7 @@ export default class HelloWorldApp extends Component {
  
   getListCall(){
     var that = this;
-    var url = "https://jsonkeeper.com/b/YKTT" // itunes search 
+    var url = "https://jsonkeeper.com/b/YKTT" // itunes search endpoint
     console.log("-----------url:"+url);
  
      fetch(url,{method: 'GET',  headers: {
@@ -61,7 +50,6 @@ export default class HelloWorldApp extends Component {
                 that.setState({ 
               JSONResult: result,
               });
-          //  console.log(result);
         }).catch(function (error) {
           console.log("-------- error ------- "+error);
          alert("result:"+error)
